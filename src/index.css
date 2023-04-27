@@ -41,7 +41,7 @@
 
     .item_shadow
     {
-        @apply shadow-lg shadow-[#212121]
+        @apply shadow-xl
     }
 
     ::-webkit-scrollbar 
