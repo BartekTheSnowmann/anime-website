@@ -39,9 +39,9 @@ function Favorites({theme}) {
           (
             favoriteArray.map((item=>
               (
-                <div className='hover:scale-105 duration-300 bg-white relative group item_shadow'
+                <div className='overflow-hidden group bg-white relative group item_shadow'
                 key={item.title}>
-                  <img src={item.img} alt='' className='h-full w-full '/>
+                  <img src={item.img} alt='' className='h-full w-full group-hover:scale-105 duration-300'/>
                   <div className='hidden group-hover:flex absolute top-0 h-full w-full bg-dark/50 text-white items-center justify-center'>
                     <h1 className='drop-shadow-xl text-sm sm:text-lg xl:text-xl px-2'>{item.title? (item.title):(item.name)}</h1>
                   </div>

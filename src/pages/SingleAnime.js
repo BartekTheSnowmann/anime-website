@@ -177,7 +177,7 @@ function SingleAnime({theme}) {
             </div>
           </div>}
           </>
-          : ''} 
+          : '...'} 
         </>
       </motion.div>
     </>

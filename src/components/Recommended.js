@@ -61,7 +61,7 @@ function Recommended() {
                 onClick={NavigateToAnime}
                 src={currentAnime?.images.jpg.image_url}/>
             </div>
-          </div>:''}
+          </div>:'...'}
     </div>
     </div>
   )

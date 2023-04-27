@@ -47,7 +47,7 @@ function Carousel({theme}) {
                 right: 0,
                 left:-windowSize.width}}
                 key={windowSize.width}
-                className='grid gap-x-2 grid-flow-col px-4'>
+                className='grid gap-x-4 grid-flow-col px-4'>
                         {data.map((item,index)=>
                         (
                             <div

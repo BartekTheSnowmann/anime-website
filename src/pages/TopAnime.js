@@ -55,9 +55,9 @@ function TopAnime({theme}) {
       (
       <div
         onClick={()=>navigateTo(item.mal_id)}
-        className='hover:scale-105 duration-300 group relative cursor-pointer item_shadow'
+        className='overflow-hidden group relative cursor-pointer item_shadow'
         key={index}>
-          <img src={item.images.jpg.image_url} alt={item.title} className='h-full w-full' />
+          <img src={item.images.jpg.image_url} alt={item.title} className='h-full w-full group-hover:scale-105 duration-300' />
           <div className='hidden group-hover:flex absolute top-0 h-full w-full bg-dark/50 text-white items-center justify-center'>
             <h1 className='text-sm sm:text-lg xl:text-xl px-2'>{item.title? (item.title):(item.name)}</h1>
           </div>
