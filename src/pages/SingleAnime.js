@@ -90,8 +90,6 @@ function SingleAnime({theme}) {
     })
     },[])  
 
-    console.log(data);
-
   return (
     <>
       <motion.div
