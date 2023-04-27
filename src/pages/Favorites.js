@@ -40,8 +40,8 @@ function Favorites({theme}) {
         <div className='max-w-[1240px] mx-auto px-4 pt-4 flex gap-x-4 text-white'>
           <button className='bg-primary flex gap-x-2 items-center'
           onClick={()=>setIsEditing(true)} >Edit <AiFillEdit size={20} /> </button>
-          <button className='bg-primary'
-          onClick={()=>setIsEditing(false)}>Cancel</button>
+          {isEditing && <button className='bg-primary'
+          onClick={()=>setIsEditing(false)}>Cancel</button>}
         </div>
         <div className='max-w-[1240px] mx-auto grid grid-cols-3 sm:grid-cols-4 xl:grid-cols-5 p-4 gap-6 md:gap-8 font-bold'>
           {favoriteArray.length === 0 ? <h1 className={theme === 'Light'?'text-3xl text-dark':'text-3xl text-white'}>List is empty</h1>:
