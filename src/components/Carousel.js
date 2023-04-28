@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 
 function Carousel({theme}) {
-    
+
     const {data, loading} = useAxios('https://api.jikan.moe/v4/seasons/upcoming')
     const CarouselRef = useRef()
     const [windowSize, setWindowSize] = useState({width:0});
@@ -17,7 +17,7 @@ function Carousel({theme}) {
         handleResize()
         window.addEventListener('resize',handleResize)
         return()=>window.removeEventListener('resize',handleResize)
-    },[data,pathname])
+    },[data])
 
     const navigate = useNavigate()
     const NavigateToAnime = (id) =>
@@ -37,17 +37,18 @@ function Carousel({theme}) {
             </div>         
                 {loading === false ? 
                 <motion.div
+                ref={CarouselRef}
                 whileTap={{cursor:'grabbing'}}
                 drag='x'
                 dragConstraints={{
                 right: 0,
                 left:-windowSize.width}}
-                key={windowSize.width}
+                key={`Carousel-${pathname}`}
                 className='grid gap-x-4 grid-flow-col px-4'>
-                        {data.map((item)=>
+                        {data.map((item,index)=>
                         (
                             <motion.div
-                            key={item.mal_id} className='hover:scale-105 duration-300 w-[200px]'>
+                            key={index} className='hover:scale-105 duration-300 w-[200px]'>
                                 <img src={item.images.jpg.image_url} alt='' className='pointer-events-none'/>
                                 <h1 className='font-bold pt-2  cursor-pointer'
                                 onClick={()=>NavigateToAnime(item.mal_id)}>{item.title}</h1>
