@@ -9,6 +9,7 @@ function Carousel({theme}) {
     const {data, loading} = useAxios('https://api.jikan.moe/v4/seasons/upcoming')
     const CarouselRef = useRef()
     const [windowSize, setWindowSize] = useState({width:0});
+    const pathname = window.location.pathname
     useEffect(()=>
     {
         function handleResize(){
@@ -16,7 +17,7 @@ function Carousel({theme}) {
         handleResize()
         window.addEventListener('resize',handleResize)
         return()=>window.removeEventListener('resize',handleResize)
-    },[data])
+    },[data,pathname])
 
     const navigate = useNavigate()
     const NavigateToAnime = (id) =>
@@ -43,14 +44,14 @@ function Carousel({theme}) {
                 left:-windowSize.width}}
                 key={windowSize.width}
                 className='grid gap-x-4 grid-flow-col px-4'>
-                        {data.map((item,index)=>
+                        {data.map((item)=>
                         (
-                            <div
-                            key={index} className='hover:scale-105 duration-300 w-[200px]'>
+                            <motion.div
+                            key={item.mal_id} className='hover:scale-105 duration-300 w-[200px]'>
                                 <img src={item.images.jpg.image_url} alt='' className='pointer-events-none'/>
                                 <h1 className='font-bold pt-2  cursor-pointer'
                                 onClick={()=>NavigateToAnime(item.mal_id)}>{item.title}</h1>
-                            </div>
+                            </motion.div>
                         ))}
                 </motion.div> :'Loading...'}
         </div>
