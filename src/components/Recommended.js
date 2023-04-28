@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {AiFillStar} from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
 import useAxios from '../hooks/UseAxios';
+import { motion } from 'framer-motion';
 
 function Recommended() {
 
@@ -40,7 +41,11 @@ function Recommended() {
         
           {data.length > 3? 
           <div className='grid sm:grid-cols-2 sm:grid-rows-2 justify-items-between gap-4'>
-            <div className='text-gray-400'>
+            <motion.div className='text-gray-400'
+            key={currentAnime?.title}
+            initial={{y:20}}
+            animate={{y:0}}
+            transition={{type:'tween'}}>
                 <h1 className='text-white text-3xl font-bold pt-12 pb-4'>{currentAnime?.title}</h1>
                 <div className='flex items-center'>
                 <p>{currentAnime?.score}</p> 
@@ -54,10 +59,9 @@ function Recommended() {
                     </p>    
                   ))}
                 <p>Episodes: {currentAnime?.episodes}</p>
-            </div>
+            </motion.div>
           
             <div className='sm:row-span-2'
-            key={currentAnime?.images.jpg.image_url}
             >
                 <img className='h-full w-full object-cover p-4 cursor-pointer'  
                 onClick={NavigateToAnime}
