@@ -2,25 +2,21 @@ import React, { useEffect, useState } from 'react'
 import useAxios from '../hooks/UseAxios'
 import { motion} from "framer-motion"
 import { useRef } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Carousel({theme}) {
-
-    const {data, loading} = useAxios('https://api.jikan.moe/v4/seasons/upcoming')
     
+    const {data, loading} = useAxios('https://api.jikan.moe/v4/seasons/upcoming')
     const CarouselRef = useRef()
-    const [windowSize, setWindowSize] = useState({width: undefined,});
-
+    const [windowSize, setWindowSize] = useState({width:0});
     useEffect(()=>
     {
         function handleResize(){
         setWindowSize({width: CarouselRef?.current.scrollWidth-CarouselRef?.current.offsetWidth})}
         handleResize()
         window.addEventListener('resize',handleResize)
-          
         return()=>window.removeEventListener('resize',handleResize)
     },[data])
-
 
     const navigate = useNavigate()
     const NavigateToAnime = (id) =>
