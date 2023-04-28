@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useAxios from '../hooks/UseAxios'
 import { motion} from "framer-motion"
 import { useRef } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 function Carousel({theme}) {
 
@@ -17,7 +17,7 @@ function Carousel({theme}) {
         handleResize()
         window.addEventListener('resize',handleResize)
         return()=>window.removeEventListener('resize',handleResize)
-    },[data])
+    },[data, pathname])
 
     const navigate = useNavigate()
     const NavigateToAnime = (id) =>
@@ -28,7 +28,7 @@ function Carousel({theme}) {
   return (
     <div 
     style={theme==='Light'? {background:'white', color:'#212121'}:{background:'#212121', color:'white'}}
-    className='pt-10' id='Upcoming'>
+    className='py-10' id='Upcoming'>
         <div className='overflow-hidden'
         ref={CarouselRef}>
             <div className='pb-10 flex items-end max-w-[1240px] mx-auto'>
