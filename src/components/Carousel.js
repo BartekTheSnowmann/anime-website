@@ -15,10 +15,9 @@ function Carousel({theme}) {
     {
         function handleResize(){
         setWindowSize({width: CarouselRef?.current.scrollWidth-CarouselRef?.current.offsetWidth})}
+        handleResize()
         window.addEventListener('resize',handleResize)
-        setTimeout(() => {
-            handleResize()
-        });
+          
         return()=>window.removeEventListener('resize',handleResize)
     },[data])
 
