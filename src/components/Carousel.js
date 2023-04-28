@@ -18,9 +18,9 @@ function Carousel({theme}) {
         window.addEventListener('resize',handleResize)
         setTimeout(() => {
             handleResize()
-        }, 100);
+        });
         return()=>window.removeEventListener('resize',handleResize)
-    },[])
+    },[data])
 
 
     const navigate = useNavigate()
