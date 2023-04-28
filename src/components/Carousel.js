@@ -10,6 +10,7 @@ function Carousel({theme}) {
     const CarouselRef = useRef()
     const [windowSize, setWindowSize] = useState({width:0});
     const pathname = window.location.pathname
+
     useEffect(()=>
     {
         function handleResize(){
@@ -36,19 +37,17 @@ function Carousel({theme}) {
                 <p className='text-gray-400'>(click a title)</p>
             </div>         
                 {loading === false ? 
-                <motion.div
-                ref={CarouselRef}
-                whileTap={{cursor:'grabbing'}}
+                <motion.div className='grid gap-x-4 grid-flow-col px-4'
                 drag='x'
+                whileTap={{cursor:'grabbing'}}
                 dragConstraints={{
                 right: 0,
                 left:-windowSize.width}}
-                key={`Carousel-${pathname}`}
-                className='grid gap-x-4 grid-flow-col px-4'>
-                        {data.map((item,index)=>
+                key={`Carousel-${pathname}`}>
+                        {data.map((item)=>
                         (
                             <motion.div
-                            key={index} className='hover:scale-105 duration-300 w-[200px]'>
+                            key={item.mal_id} className='hover:scale-105 duration-300 w-[200px]'>
                                 <img src={item.images.jpg.image_url} alt='' className='pointer-events-none'/>
                                 <h1 className='font-bold pt-2  cursor-pointer'
                                 onClick={()=>NavigateToAnime(item.mal_id)}>{item.title}</h1>
