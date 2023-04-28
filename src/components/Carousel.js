@@ -49,12 +49,12 @@ function Carousel({theme}) {
                 className='grid gap-x-4 grid-flow-col px-4'>
                         {data.map((item,index)=>
                         (
-                            <div
+                            <motion.div
                             key={index} className='hover:scale-105 duration-300 w-[200px]'>
                                 <img src={item.images.jpg.image_url} alt='' className='pointer-events-none'/>
                                 <h1 className='font-bold pt-2  cursor-pointer'
                                 onClick={()=>NavigateToAnime(item.mal_id)}>{item.title}</h1>
-                            </div>
+                            </motion.div>
                         ))}
                 </motion.div> :'Loading...'}
         </div>
