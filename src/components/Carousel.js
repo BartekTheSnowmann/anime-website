@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react'
 import useAxios from '../hooks/UseAxios'
 import { motion} from "framer-motion"
 import { useRef } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Carousel({theme}) {
-    
+
     const {data, loading} = useAxios('https://api.jikan.moe/v4/seasons/upcoming')
+
     const CarouselRef = useRef()
-    const [windowSize, setWindowSize] = useState({width:0});
+    const [windowSize, setWindowSize] = useState({width: undefined});
+    const pathname  = window.location.pathname
     useEffect(()=>
     {
         function handleResize(){
@@ -16,7 +18,8 @@ function Carousel({theme}) {
         handleResize()
         window.addEventListener('resize',handleResize)
         return()=>window.removeEventListener('resize',handleResize)
-    },[data])
+    },[data,pathname])
+
 
     const navigate = useNavigate()
     const NavigateToAnime = (id) =>
@@ -41,7 +44,7 @@ function Carousel({theme}) {
                 dragConstraints={{
                 right: 0,
                 left:-windowSize.width}}
-                key={windowSize.width}
+                key={Date.now()}
                 className='grid gap-x-4 grid-flow-col px-4'>
                         {data.map((item,index)=>
                         (
