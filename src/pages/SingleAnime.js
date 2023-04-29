@@ -101,9 +101,10 @@ function SingleAnime({theme}) {
         {loading === false?
           <>
           {type === 'anime'? //Anime
-          <div className='max-w-[1240px] fixed_height mx-auto grid sm:grid-cols-2 px-4 py-6 gap-4'
+          <div className='max-w-[1240px] fixed_height mx-auto grid justify-center sm:grid-cols-2 px-4 py-6 gap-6'
           style={theme==='Light'?{color:'#212121'}:{color:'white'}}>
-          <div className='self-start'>
+          <div className='self-start'> 
+          {/* row-start-2 sm:row-start-1 */}
             <h1 className='text-3xl font-bold'>{data.title}</h1>
             <div className='py-6 text-gray-400'>
               {data.score?<div className='flex items-center'>
@@ -118,7 +119,7 @@ function SingleAnime({theme}) {
                   ))}
               </div>
             </div>
-            <div onClick={addToFavorite} className='font-bold col-start-2 flex items-center justify-end pb-6 gap-1 cursor-pointer'>
+            <div onClick={addToFavorite} className='font-bold col-start-2 flex items-center justify-end gap-1 cursor-pointer'>
                   {favorite === false? <>
                   <p className='text-md'
                   variants={PageAnimation}
@@ -140,19 +141,20 @@ function SingleAnime({theme}) {
                 </div>
           </div>
           <div className='md:justify-self-end'>
-            <img className='item_shadow' src={data.images.jpg.image_url} alt='' width='500px'/>
+            <img className='item_shadow' src={data.images.jpg.image_url} alt='' width='400px'/>
           </div>
         </div>
           : //Character
           <div 
           style={theme==='Light'?{color:'#212121'}:{color:'white'}}
-          className='max-w-[1240px] fixed_height mx-auto grid sm:grid-cols-2 px-4 py-6'>
+          className='max-w-[1240px] fixed_height mx-auto grid justify-center sm:grid-cols-2 px-4 py-6 gap-6'>
             <div className='self-start'>
+              {/*  row-start-2 sm:row-start-1 */}
               <h1 className='text-3xl font-bold'>{data.name}</h1>
-              <h1 className='text-gray-400 py-6'>{text}
+              <h1 className='text-gray-400 py-6 max-w-[400px]'>{text}
               <p className='cursor-pointer text-white text-md' 
               onClick={ChangeTextLength}>{text.length > 259? 'show less':'show more'}</p></h1>
-               <div onClick={addToFavorite} className='font-bold col-start-2 flex items-center justify-end pb-6 gap-1 cursor-pointer'>
+               <div onClick={addToFavorite} className='font-bold col-start-2 flex items-center justify-end gap-1 cursor-pointer'>
                   {favorite === false? <>
                   <p className='text-md'
                   variants={PageAnimation}
