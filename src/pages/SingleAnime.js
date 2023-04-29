@@ -21,7 +21,6 @@ function SingleAnime({theme}) {
     }
   }
 
-
   const navigate = useNavigate()
   const {id,type} = useParams()
   const url = `https://api.jikan.moe/v4/${type}/${id}`
@@ -80,7 +79,9 @@ function SingleAnime({theme}) {
     }
   }
 
-  useEffect(()=>{
+  useEffect(()=>
+  {
+    setFavorite(false)
     favoriteArray.map((item)=>
     {
       if(item.id === id)
@@ -88,7 +89,7 @@ function SingleAnime({theme}) {
         setFavorite(true)
       }
     })
-    },[])  
+  },[data])
 
   return (
     <>
@@ -125,7 +126,7 @@ function SingleAnime({theme}) {
                   animate='show'
                   exit='hidden'>
                   Add to Favorites</p>
-                  <AiOutlinePlus size={30}/>
+                  <AiOutlinePlus  size={30}/>
                   </>
                   :
                   <>

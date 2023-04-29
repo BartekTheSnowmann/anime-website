@@ -47,7 +47,7 @@ function Carousel({theme}) {
                             <motion.div
                             key={item.mal_id} className='hover:scale-105 duration-300 w-[200px]'>
                                 <img src={item.images.jpg.image_url} alt='' className='pointer-events-none'/>
-                                <h1 className='font-bold pt-2  cursor-pointer'
+                                <h1 className='font-bold pt-2 cursor-pointer'
                                 onClick={()=>NavigateToAnime(item.mal_id)}>{item.title}</h1>
                             </motion.div>
                         ))}

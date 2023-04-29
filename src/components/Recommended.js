@@ -32,10 +32,10 @@ function Recommended() {
 
   return (
     <div className='bg-primary' id='New'>
-    <div className='text-white max-w-[1240px] mx-auto px-4 py-12'>
+    <div className='text-white max-w-[1240px] mx-auto px-4 py-10'>
         {/* Whats new */}
         <div className='justify-self-start font-bold'>
-          <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold uppercase pb-12'>What's New</h1>
+          <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold uppercase pb-10'>What's New</h1>
         </div>
         {/* Anime data */}
         

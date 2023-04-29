@@ -6,8 +6,8 @@ function Footer({theme}) {
   return (
     <div 
     style={theme==='Light'? {color:'#212121'}:{color:'white'}}
-    className='max-w-[1240px] mx-auto py-12 px-4'>
-      <div className='flex justify-center gap-12 border-b-2 pb-6'>
+    className='max-w-[1240px] mx-auto py-10 px-4'>
+      <div className='flex justify-center gap-10 border-b-2 pb-6'>
 
         <div>
           <Link to='/'><h1 className='text-4xl md:text-4xl lg:text-6xl font-bold text-primary cursor-pointer'>

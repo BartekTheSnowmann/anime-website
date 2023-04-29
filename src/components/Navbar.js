@@ -91,7 +91,7 @@ function Navbar({setSearch, searchData, SetTheme, theme}) {
             animate={{y:0,opacity:1}}
             exit={{y:-20,opacity:0}}
             transition={{type:'tween'}}
-            className='w-20 absolute top-20'
+            className='max-h-[450px] overflow-scroll absolute top-20'
             ref={searchTabRef}>
             {searchData.map((item)=>
             (

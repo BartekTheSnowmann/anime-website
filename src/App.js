@@ -15,7 +15,7 @@ function App() {
   const [theme, SetTheme] = useState('Dark')
 
   const [search, setSearch] = useState('')
-  const url = `https://api.jikan.moe/v4/anime?q=${search}&sfw&limit=4`
+  const url = `https://api.jikan.moe/v4/anime?q=${search}`
   const {data} = useAxios(url)
 
   const location = useLocation()
