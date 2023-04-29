@@ -16,8 +16,6 @@ function Carousel({theme}) {
         function handleResize(){
         setWindowSize({width: CarouselRef?.current.scrollWidth-CarouselRef?.current.offsetWidth})}
         handleResize()
-        window.addEventListener('resize',handleResize)
-        return()=>window.removeEventListener('resize',handleResize)
     },[data, pathname])
 
     const navigate = useNavigate()
@@ -37,13 +35,13 @@ function Carousel({theme}) {
                 <p className='text-gray-400'>(click a title)</p>
             </div>         
                 {loading === false ? 
-                <motion.div className='grid gap-x-4 grid-flow-col px-4'
+                <motion.div className='grid gap-x-4 grid-flow-col'
                 drag='x'
                 whileTap={{cursor:'grabbing'}}
                 dragConstraints={{
                 right: 0,
                 left:-windowSize.width}}
-                key={`Carousel-${pathname}`}>
+                key={Date.length}>
                         {data.map((item)=>
                         (
                             <motion.div
