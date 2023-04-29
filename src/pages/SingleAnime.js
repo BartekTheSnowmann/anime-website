@@ -103,8 +103,8 @@ function SingleAnime({theme}) {
           {type === 'anime'? //Anime
           <div className='max-w-[1240px] fixed_height mx-auto grid justify-center sm:grid-cols-2 px-4 py-6 gap-6'
           style={theme==='Light'?{color:'#212121'}:{color:'white'}}>
-          <div className='self-start'> 
-          {/* row-start-2 sm:row-start-1 */}
+          <div className='self-start row-start-2 sm:row-start-1'> 
+          
             <h1 className='text-3xl font-bold'>{data.title}</h1>
             <div className='py-6 text-gray-400'>
               {data.score?<div className='flex items-center'>
@@ -148,8 +148,7 @@ function SingleAnime({theme}) {
           <div 
           style={theme==='Light'?{color:'#212121'}:{color:'white'}}
           className='max-w-[1240px] fixed_height mx-auto grid justify-center sm:grid-cols-2 px-4 py-6 gap-6'>
-            <div className='self-start'>
-              {/*  row-start-2 sm:row-start-1 */}
+            <div className='self-start row-start-2 sm:row-start-1'>
               <h1 className='text-3xl font-bold'>{data.name}</h1>
               <h1 className='text-gray-400 py-6 max-w-[400px]'>{text}
               <p className='cursor-pointer text-white text-md' 
