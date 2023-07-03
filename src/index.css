@@ -2,50 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-@layer base 
-{
-    *
-    {
-        font-family: Poppins;
-        box-sizing: border-box;
-        scroll-padding-top: 5rem;
-    }
+@layer base {
+  * {
+    font-family: Poppins;
+    box-sizing: border-box;
+    scroll-padding-top: 5rem;
+  }
 
-    li
-    {
-        @apply mr-2 uppercase cursor-pointer hover:text-gold duration-300 font-bold
-    }
+  h1 {
+    @apply font-bold;
+  }
 
-    p
-    {
-        @apply text-lg sm:text-xl
-    }
+  li {
+    @apply mr-2 uppercase cursor-pointer hover:text-gold duration-300 font-bold;
+  }
 
-    button 
-    {
-        @apply  font-bold p-2 uppercase duration-300
-    }
+  p {
+    @apply text-lg sm:text-xl;
+  }
 
-    html
-    {
-        scroll-behavior: smooth;
-    }
+  button {
+    @apply font-bold p-2 uppercase duration-300;
+  }
 
+  html {
+    scroll-behavior: smooth;
+  }
 
-    .fixed_height
-    {
-        @apply min-h-[calc(100vh-5rem)]
-    }
+  .fixed_height {
+    @apply min-h-[calc(100vh-5rem)];
+  }
 
-    .item_shadow
-    {
-        @apply shadow-xl
-    }
+  .item_shadow {
+    @apply shadow-xl;
+  }
 
-    ::-webkit-scrollbar 
-    {
-        width: 0;
-    }
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .divider {
+    @apply w-10 h-1;
+  }
 }
