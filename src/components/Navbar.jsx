@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Logo, Logo2 } from "../assets/Index";
+import { Logo } from "../assets/Index";
 import SearchBar from "./SearchBar";
 import DarkMode from "./DarkMode";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
@@ -26,15 +26,7 @@ function Navbar({ theme, setTheme }) {
           {/* Logo */}
           <div>
             <Link to="/">
-              {theme === "Dark" ? (
-                <div>
-                  <img src={Logo} alt="Logo" className="h-10" />
-                </div>
-              ) : (
-                <div>
-                  <img src={Logo2} alt="Logo" className="h-10" />
-                </div>
-              )}
+              <img src={Logo} alt="Logo" className="h-10" />
             </Link>
           </div>
           {/* SearchBar */}

@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { Logo, Logo2 } from "../assets/Index";
+import { Logo } from "../assets/Index";
 
 function Footer({ theme }) {
   return (
@@ -12,11 +12,7 @@ function Footer({ theme }) {
       <div className="flex justify-center gap-10 border-b-2 pb-6">
         <div>
           <Link to="/">
-            {theme === "Dark" ? (
-              <img src={Logo} alt="Logo" className="h-10" />
-            ) : (
-              <img src={Logo2} alt="Logo" className="h-10" />
-            )}
+            <img src={Logo} alt="Logo" className="h-10" />
           </Link>
           <p></p>
         </div>
