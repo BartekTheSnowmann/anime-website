@@ -12,7 +12,6 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   const [theme, setTheme] = useState("Light");
   const location = useLocation();
-  console.log(theme);
 
   return (
     <div

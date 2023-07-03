@@ -27,9 +27,13 @@ function Navbar({ theme, setTheme }) {
           <div>
             <Link to="/">
               {theme === "Dark" ? (
-                <img src={Logo} alt="Logo" className="h-10" />
+                <div>
+                  <img src={Logo} alt="Logo" className="h-10" />
+                </div>
               ) : (
-                <img src={Logo2} alt="Logo" className="h-10" />
+                <div>
+                  <img src={Logo2} alt="Logo" className="h-10" />
+                </div>
               )}
             </Link>
           </div>
