@@ -55,10 +55,11 @@ function SearchBar({ theme }) {
           placeholder="Search..."
           id="searchbar"
           name="search"
-          className="outline-none p-2 m-2 bg-gray-200"
+          className="outline-none p-2 bg-gray-200 max-w-[200px] md:max-w-[240px]"
         />
         <label htmlFor="searchbar">
           <AiOutlineSearch
+            className="mx-1"
             onClick={handleSubmit}
             size={30}
             style={theme === "Dark" ? { color: "white" } : ""}
@@ -74,7 +75,7 @@ function SearchBar({ theme }) {
                 ? { background: "#212121", color: "black" }
                 : { background: "white" }
             }
-            className="max-h-[480px] w-60 absolute top-20 overflow-scroll shadow-lg"
+            className="max-h-[480px] max-w-[200px] md:max-w-[240px] absolute top-20 overflow-scroll shadow-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
