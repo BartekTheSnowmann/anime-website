@@ -16,13 +16,15 @@ function DarkMode({ theme, setTheme }) {
   return (
     <div
       style={
-        theme === "Light" ? { background: "#212121" } : { background: "white" }
+        theme === "Light"
+          ? { background: "#212121" }
+          : { background: "#D41B3D" }
       }
       className="relative cursor-pointer w-16 mx-auto flex items-center justify-between bg-white p-[6px]"
       onClick={changeTheme}
     >
       <BsSunFill className="text-yellow-400 drop-shadow-lg" size={20} />
-      <BsMoonFill className="text-gray-300 drop-shadow-lg" size={20} />
+      <BsMoonFill className="text-gray-50 drop-shadow-lg" size={20} />
       <motion.div
         style={
           theme === "Light"

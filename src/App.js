@@ -10,7 +10,7 @@ import { FavoriteProvider } from "./context/FavoriteContext";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const [theme, setTheme] = useState("Dark");
+  const [theme, setTheme] = useState("Light");
   const location = useLocation();
   console.log(theme);
 

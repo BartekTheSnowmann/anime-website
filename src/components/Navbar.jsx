@@ -26,7 +26,11 @@ function Navbar({ theme, setTheme }) {
           {/* Logo */}
           <div>
             <Link to="/">
-              <img src={Logo2} alt="Logo" className="h-10" />
+              {theme === "Dark" ? (
+                <img src={Logo} alt="Logo" className="h-10" />
+              ) : (
+                <img src={Logo2} alt="Logo" className="h-10" />
+              )}
             </Link>
           </div>
           {/* SearchBar */}
