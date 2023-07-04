@@ -239,15 +239,20 @@ function SingleAnime({ theme }) {
               >
                 <div className="self-start row-start-2 sm:row-start-1">
                   <h1 className="text-3xl font-bold">{data.name}</h1>
-                  <h1 className="text-gray-400 py-6 max-w-[400px]">
-                    {text}
-                    <p
-                      className="cursor-pointer text-gray-400 text-md"
-                      onClick={ChangeTextLength}
-                    >
-                      {text.length > 259 ? "show less" : "show more"}
-                    </p>
-                  </h1>
+                  {data?.about && (
+                    <div className="text-gray-400 py-6 max-w-[400px]">
+                      {text}
+                      <p
+                        className="cursor-pointer text-gray-400 text-md"
+                        onClick={ChangeTextLength}
+                      >
+                        {data?.about.length > 256 && text.length == 259
+                          ? "show more"
+                          : ""}
+                        {text.length > 259 && "show less"}
+                      </p>
+                    </div>
+                  )}
                   <div
                     onClick={addToFavorite}
                     className="font-bold col-start-2 flex items-center justify-end gap-1 cursor-pointer"
