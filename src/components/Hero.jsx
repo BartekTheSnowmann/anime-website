@@ -21,7 +21,7 @@ function Hero() {
                 The Art of Anime.
               </p>
             </div>
-            <a href="#New">
+            <a href="#Recommended">
               <button className="border-2 border-white py-2 px-4 hover:bg-white hover:text-black">
                 Get Started
               </button>
