@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  AiFillStar,
-  AiFillLeftCircle,
-  AiFillRightCircle,
-  AiOutlineReload,
-  AiOutlineAlibaba,
-} from "react-icons/ai";
+import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../hooks/UseAxios";
-import { motion } from "framer-motion";
 
 function Recommended() {
   const url = "https://api.jikan.moe/v4/recommendations/anime";
-  const { data, loading } = useAxios(url);
+  const { data } = useAxios(url);
 
   const [currentAnime, setCurrentAnime] = useState(
     data[Math.floor(Math.random() * 25)]
@@ -23,7 +16,9 @@ function Recommended() {
   };
 
   useEffect(() => {
-    randomAnime();
+    setTimeout(() => {
+      randomAnime();
+    }, 1500);
   }, [data]);
 
   const navigate = useNavigate();
@@ -31,11 +26,8 @@ function Recommended() {
     navigate(`/singleanime/anime/${id}`);
   };
 
-  // console.log(currentAnime);
-
   const [progress, setProgress] = useState(0);
   let width = progress * -100 + "%";
-  // console.log({ progress, width });
 
   return (
     <div className="bg-[#D41B3D]" id="Recommended">
