@@ -18,7 +18,7 @@ function Recommended() {
   useEffect(() => {
     setTimeout(() => {
       randomAnime();
-    }, 1500);
+    }, 2500);
   }, [data]);
 
   const navigate = useNavigate();
