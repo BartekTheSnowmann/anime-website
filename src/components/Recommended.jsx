@@ -23,7 +23,7 @@ function Recommended() {
   useEffect(() => {
     setTimeout(() => {
       fetchData();
-    }, 1500);
+    }, 2500);
   }, []);
 
   const navigate = useNavigate();
