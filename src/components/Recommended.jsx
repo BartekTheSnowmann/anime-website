@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import useAxios from "../hooks/UseAxios";
 import axios from "axios";
 
 function Recommended() {
@@ -18,7 +17,6 @@ function Recommended() {
 
   const randomAnime = (res) => {
     const randomNumber = Math.floor(Math.random() * 25);
-    console.log(res[randomNumber]);
     setCurrentAnime(res[randomNumber]);
   };
 
