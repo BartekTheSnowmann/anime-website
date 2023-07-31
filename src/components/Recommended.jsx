@@ -2,24 +2,31 @@ import React, { useEffect, useState } from "react";
 import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../hooks/UseAxios";
+import axios from "axios";
 
 function Recommended() {
   const url = "https://api.jikan.moe/v4/recommendations/anime";
-  const { data } = useAxios(url);
+  const [data, setData] = useState();
+  const [currentAnime, setCurrentAnime] = useState();
 
-  const [currentAnime, setCurrentAnime] = useState(
-    data[Math.floor(Math.random() * 25)]
-  );
-  const randomAnime = () => {
+  const fetchData = async () => {
+    const response = await axios.get(url);
+    const res = await response.data.data;
+    setData(res);
+    randomAnime(res);
+  };
+
+  const randomAnime = (res) => {
     const randomNumber = Math.floor(Math.random() * 25);
-    setCurrentAnime(data[randomNumber]);
+    console.log(res[randomNumber]);
+    setCurrentAnime(res[randomNumber]);
   };
 
   useEffect(() => {
     setTimeout(() => {
-      randomAnime();
-    }, 2500);
-  }, [data]);
+      fetchData();
+    }, 1500);
+  }, []);
 
   const navigate = useNavigate();
   const NavigateToAnime = (id) => {
